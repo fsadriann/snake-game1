@@ -130,4 +130,23 @@ while True:
 
 
     mov()
+
+    # colisiones con el cuerpo
+    for new_body in body:
+        if new_body.distance(head) < 20:
+            time.sleep(1)
+            head.goto(0,0)
+            head.direction = "stop"
+
+            # eliminar cuerpo
+            for new_body in body:
+                new_body.goto(1000,1000)
+
+            # limpiar lista
+            body.clear()
+
+            #resetear marcador
+            score = 0
+            text.clear()
+            text.write("Score: {}  High Score: {}".format(score, high_score), align="center", font=("courier",20, "normal"))
     time.sleep(posponer)
