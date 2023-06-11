@@ -127,8 +127,6 @@ while True:
         y = head.ycor()
         body[0].goto(x,y)
 
-
-
     mov()
 
     # colisiones con el cuerpo
